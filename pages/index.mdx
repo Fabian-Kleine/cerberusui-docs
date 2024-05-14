@@ -1,1 +1,15 @@
-# Cerberusui
+import { Input, Modal, Button } from "cerberusui"
+import Link from "next/link"
+
+<div className="flex justify-center items-center w-full h-full">
+    <Modal variant="warning" danger={true} open modalCloseButton={false} className="!px-20">
+        <div className="flex justify-center py-5 gap-2">
+            <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FFabian-Kleine%2Fcerberusui%2Fmain%2Fpackage.json&query=version&prefix=v&style=flat&logo=npm&label=npm&color=%23CB3837&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcerberusui" />
+            <img src="https://img.shields.io/github/last-commit/Fabian-Kleine/cerberusui/main?color=097BBC" />
+        </div>
+        <div className="flex flex-col items-center gap-5">
+            <Input disabled className="font-mono !text-cuiprimary" variant="primary" value="npm i cerberusui" />
+            <Button variant="secondary" asChild><Link href={'/docs'}>Docs</Link></Button>
+        </div>
+    </Modal>
+</div>
