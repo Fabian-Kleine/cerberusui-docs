@@ -1,4 +1,4 @@
-import { Input, Modal, Button } from "cerberusui"
+import { Modal, Button } from "cerberusui"
 import Link from "next/link"
 
 <div className="flex justify-center items-center w-full h-full">
@@ -8,7 +8,9 @@ import Link from "next/link"
             <img src="https://img.shields.io/github/last-commit/Fabian-Kleine/cerberusui/main?color=097BBC" />
         </div>
         <div className="flex flex-col items-center gap-5">
-            <Input disabled className="font-mono !text-cuiprimary" variant="primary" value="npm i cerberusui" />
+            ```text copy
+            npm i cerberusui
+            ```
             <Button variant="secondary" asChild><Link href={'/docs'}>Docs</Link></Button>
         </div>
     </Modal>
