@@ -1,0 +1,298 @@
+import { Callout, Tabs } from 'nextra/components'
+import { Button, Modal } from "cerberusui"
+import { useState } from "react"
+import { Radiation } from "lucide-react"
+
+# Modal
+## Props
+|Prop|Type|Default| Required | |
+| :------------ | :---------: | :----------: | :----------: | ----------: |
+| variant       |    "primary" &#124; "secondary" &#124; "tertiary" &#124; "default" &#124; "warning"    | "default" | yes | style of the modal
+| open     |    **Boolean**     |    **false** | yes | the state to open the modal
+| setOpen     |    SetStateAction{"<"}boolean{">"}     |    **none** | yes | the state action to open the modal
+| modalTitle | **string** |    "" | no | title of the modal
+| modalActions | **Array** | [ ] | no | buttons at the bottom of the modal
+| modalImage | **ReactNode** | {"<></>"} | no | image inside the modal
+| modalDraggable | **Boolean** | **false** | no | draggable modal
+| modalCloseButton | **Boolean** | **true** | no | shows/hides the close button
+| danger | **Boolean** | **false** | no | displays danger animation
+| className | **string** | "" | no | set additional classNames
+
+## Importing Modal
+```jsx copy
+import { Modal } from "cerberusui"
+```
+
+## Open/Close Modal
+Use the `useState` hook in your component and pass it to the Modal component
+```jsx {1,6}
+const [open, setOpen] = useState(false);
+
+return (
+    <>
+        <Button onClick={() => setOpen(true)} variant="primary">Open Modal</Button>
+        <Modal open={open} setOpen={setOpen} variant="default">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+        </Modal>
+    </>
+)
+```
+export const ModalExample = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <>
+            <Button onClick={() => setOpen(true)} variant="primary">Open Modal</Button>
+            <Modal open={open} setOpen={setOpen} variant="default" className='z-50'>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+            </Modal>
+        </>
+    )
+};
+
+<ModalExample />
+
+<Callout type="info" emoji="ℹ️">
+    **Important** For readability reasons the `open` and `setOpen` props aren't included in the other code examples
+</Callout>
+
+## Variants
+<Tabs items={['Default', 'Primary', 'Secondary', 'Tertiary', 'Warning']}>
+    <Tabs.Tab>
+    ```jsx copy
+    <Modal modalTitle="Default Modal" variant="default">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    ```
+    <Modal setOpen={() => { }} modalTitle="Default Modal" variant="default" open className='!relative !top-0'> 
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy
+    <Modal modalTitle="Primary Modal" variant="primary">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    ```
+    <Modal setOpen={() => { }} modalTitle="Primary Modal" variant="primary" open className='!relative !top-0'> 
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy
+    <Modal modalTitle="Secondary Modal" variant="secondary">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    ```
+    <Modal setOpen={() => { }} modalTitle="Secondary Modal" variant="secondary" open className='!relative !top-0'> 
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy
+    <Modal modalTitle="Tertiary Modal" variant="tertiary">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    ```
+    <Modal setOpen={() => { }} modalTitle="Tertiary Modal" variant="tertiary" open className='!relative !top-0'> 
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy
+    <Modal modalTitle="Warning Modal" variant="warning">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    ```
+    <Modal setOpen={() => { }} modalTitle="Warning Modal" variant="warning" open className='!relative !top-0'> 
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+    </Tabs.Tab>
+</Tabs>
+
+## Options
+### Title
+```jsx copy
+<Modal 
+    modalTitle="Default Modal with Title"
+    variant="default">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+
+<Modal
+            setOpen={() => { }}
+            modalTitle="Default Modal with Title"
+            variant="default"
+            open
+            className='!relative !top-0'> 
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+
+### Image
+The `modalImage` prop displayes the passed image on the left side of the image.
+
+When the viewport gets to small the images display is set to `display: none;`.
+```jsx copy
+<Modal 
+    modalTitle="Default Modal with Icon"
+    modalImage={
+        <img src="example.com/your-image.png" />
+    } 
+    variant="default">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+
+<Modal
+            setOpen={() => { }}
+            modalTitle="Default Modal with Icon"
+            modalImage={
+                <Radiation height={100} width={100} />
+            }
+            variant="default"
+            open
+            className='!relative !top-0'> 
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+
+### Actions
+Inside the `modalActions` **Array** you can define buttons which will be displayed at the bottom right corner of the modal.
+
+For each **action** you can define an `action` which has the type `Function`, an `actionTitle` which has the type `string` and an `actionVariant` which use the variants from the [Button Component](button).
+```jsx copy
+<Modal 
+    modalTitle="Default Modal with Actions"
+    modalActions={[{
+        action: () => alert("modal alert"),
+        actionTitle: "Alert",
+        actionVariant: "warning"
+    }, {
+        action: () => setOpen(false),
+        actionTitle: "Close",
+        actionVariant: "secondary"
+    }]}
+    variant="default">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+
+<Modal
+            setOpen={() => { }}
+            modalTitle="Default Modal with Actions"
+            variant="default"
+            open
+            modalActions={[{
+                action: () => alert("modal alert"),
+                actionTitle: "Alert",
+                actionVariant: "warning"
+            }, {
+                action: () => { },
+                actionTitle: "Close",
+                actionVariant: "secondary"
+            }]}
+            className='!relative !top-0'> 
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+
+### Without Close Button
+When this option is set to `false` the default close button doesn't show up.
+
+Mak shure to implement an alternative closing button like shown in [#Actions](#actions).
+```jsx copy
+<Modal 
+    modalTitle="Default Modal without Close Button"
+    modalCloseButton={false}
+    variant="default">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+
+<Modal
+            modalTitle="Default Modal without Close Button"
+            modalCloseButton={false}
+            open
+            variant="default"
+            className='!relative !top-0'>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+
+### Danger
+```jsx copy
+<Modal 
+    modalTitle="Danger Modal"
+    danger={true}
+    variant="warning">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+
+<Modal
+            setOpen={() => { }}
+            modalTitle="Danger Modal"
+            danger={true}
+            open
+            variant="warning"
+            className='!relative !top-0'>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+
+### Combined
+export const CombinedModal = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <>
+            <Button onClick={() => setOpen(true)} variant="warning">Open Modal</Button>
+            <Modal
+                open={open}
+                modalTitle="Combined Modal"
+                modalImage={
+                    <Radiation height={100} width={100} />
+                }
+                danger={true}
+                modalActions={[{
+                    action: () => alert("modal alert"),
+                    actionTitle: "Alert",
+                    actionVariant: "warning"
+                }, {
+                    action: () => setOpen(false),
+                    actionTitle: "Close",
+                    actionVariant: "secondary"
+                }]}
+                setOpen={setOpen}
+                variant="warning"
+                className='z-50'>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+            </Modal>
+        </>
+    )
+}
+
+<div className='flex justify-center w-full'>
+ <CombinedModal />
+</div>
+
+
+
+## Draggable
+The modal uses the package [`react-draggable`](https://www.npmjs.com/package/react-draggable) to move the modal around.
+```jsx copy
+<Modal
+    modalTitle="Default Modal Draggable"
+    modalDraggable={true}
+    variant="default">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+<div className='relative overflow-hidden h-96 border'>
+    <Modal
+                setOpen={() => { }}
+                modalTitle="Default Modal Draggable"
+                modalDraggable={true}
+                open
+                variant="default"
+                className='!relative !top-10'>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+    </Modal>
+</div>
