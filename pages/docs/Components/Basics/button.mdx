@@ -1,0 +1,70 @@
+import { Button } from "cerberusui"
+
+# Button
+## Props
+|Prop|Type|Default| Required | |
+| :------------ | :---------: | :----------: | :----------: | ----------: |
+| variant       |    "primary" &#124; "secondary" &#124; "tertiary" &#124; <br /> "default" &#124; "warning"    | "default" | yes | style of the button
+| asChild     |    **Boolean**     |    **false** | no | clones the child element
+| loading | **Boolean** |    **false** | no | sets the button to loading
+| className | **string** | "" | no | set additional classNames
+
+
+## Importing Button
+```jsx copy
+import { Button } from "cerberusui"
+```
+
+## Variants
+```jsx copy
+<Button variant="default">Default</Button>
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="tertiary">Tertiary</Button>
+<Button variant="warning">Warning</Button>
+```
+<Button variant="default">Default</Button>
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="tertiary">Tertiary</Button>
+<Button variant="warning">Warning</Button>
+
+## asChild Prop
+When using the `asChild` prop the child component will be cloned and the props of the button will be passed to it.
+```jsx copy
+<Button variant="primary" asChild>
+    <a href="#">Primary</a>
+</Button>
+```
+<Button variant="primary" asChild className="inline-block">
+    <a href="#">Primary</a>
+</Button>
+
+## Button States
+### Disabled
+```jsx copy
+<Button variant="default" disabled>Default</Button>
+<Button variant="primary" disabled>Primary</Button>
+<Button variant="secondary" disabled>Secondary</Button>
+<Button variant="tertiary" disabled>Tertiary</Button>
+<Button variant="warning" disabled>Warning</Button>
+```
+<Button variant="default" disabled>Default</Button>
+<Button variant="primary" disabled>Primary</Button>
+<Button variant="secondary" disabled>Secondary</Button>
+<Button variant="tertiary" disabled>Tertiary</Button>
+<Button variant="warning" disabled>Warning</Button>
+
+### Loading
+```jsx copy
+<Button variant="default" loading>Default</Button>
+<Button variant="primary" loading>Primary</Button>
+<Button variant="secondary" loading>Secondary</Button>
+<Button variant="tertiary" loading>Tertiary</Button>
+<Button variant="warning" loading>Warning</Button>
+```
+<Button variant="default" loading>Default</Button>
+<Button variant="primary" loading>Primary</Button>
+<Button variant="secondary" loading>Secondary</Button>
+<Button variant="tertiary"  loading>Tertiary</Button>
+<Button variant="warning" loading>Warning</Button>
