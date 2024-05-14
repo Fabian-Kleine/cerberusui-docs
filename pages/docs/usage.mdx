@@ -1,0 +1,34 @@
+import { Button } from "cerberusui"
+import { Callout } from "nextra/components"
+
+# Usage
+How to use cerberusui on your page?
+
+After you [installed](introduction) cerberusui you can import any component and use it in yor app.
+## Importing components
+```jsx {1,5}
+import { Button } from "cerberusui"
+
+export default function ButtonTest() {
+    return (
+        <Button variant="primary">Test Button</Button>
+    )
+}
+```
+<Button variant="primary">Test Button</Button>
+
+## Using custom classes
+You can add custom css classes to every component. For example you can use Tailwindcss classes.
+<Callout type="warning" emoji="⚠️">
+    **Note** that sometimes you have to use `!important` to overwrite the default style from cerberusui!
+</Callout>
+```jsx /className="w-full"/
+import { Button } from "cerberusui"
+
+export default function ButtonTest() {
+    return (
+        <Button variant="primary" className="w-full">Test Button</Button>
+    )
+}
+```
+<Button variant="primary" className="w-full">Test Button</Button>

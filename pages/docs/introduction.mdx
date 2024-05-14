@@ -1,0 +1,72 @@
+# Introduction
+## Installation
+You need [Node.js](https://nodejs.org/en) installed and a React based project like [create-react-app](https://create-react-app.dev/), [Vite](https://v3.vitejs.dev/) or [Next.js](https://nextjs.org/) setup.
+```sh npm2yarn copy
+npm i cerberusui
+```
+
+## Setup colors (optional)
+### css
+To use the colors from `cerberusui` on your css you can copy the code below to one of you css files.
+```css copy filename="index.css"
+:root {
+    --cui-primary: #3D78CD;
+    --cui-primary-hover: #3160a4;
+    --cui-primary-disabled: #244b82;
+    --cui-primary-bg: #0c1829;
+    --cui-secondary: #BD342F;
+    --cui-secondary-hover: #972a26;
+    --cui-secondary-disabled: #7a211d;
+    --cui-secondary-bg: #4c1513;
+    --cui-tertiary: #BDE763;
+    --cui-tertiary-hover: #97b94f;
+    --cui-tertiary-disabled: #6f8a37;
+    --cui-tertiary-bg: #39451e;
+    --cui-default: #52706E;
+    --cui-default-hover: #425a58;
+    --cui-default-disabled: #3c4f4e;
+    --cui-warning: #ffd60a;
+    --cui-warning-hover: #ccab08;
+    --cui-warning-disabled: #edc531;
+    --cui-warning-bg: #998006;
+    --cui-base: #020108;
+}
+```
+### Tailwindcss
+To use the colors from `cerberusui` in Tailwindcss you can copy the code below to your `tailwind.config.js`
+```js copy filename="tailwind.config.js"
+module.exports = {
+  content: [
+    './pages/**/*.{js,jsx,ts,tsx,md,mdx}',
+    './components/**/*.{js,jsx,ts,tsx,md,mdx}',
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        cuiprimary: "#3D78CD",
+        cuiprimaryhover: "#3160a4",
+        cuiprimarydisabled: "#244b82",
+        cuiprimarybg: "#0c1829",
+        cuisecondary: "#BD342F",
+        cuisecondaryhover: "#972a26",
+        cuisecondarydisabled: "#7a211d",
+        cuisecondarybg: "#4c1513",
+        cuitertiary: "#BDE763",
+        cuitertiaryhover: "#97b94f",
+        cuitertiarydisabled: "#6f8a37",
+        cuitertiarybg: "#39451e",
+        cuidefault: "#52706E",
+        cuidefaulthover: "#425a58",
+        cuidefaultdisabled: "#3c4f4e",
+        cuiwarning: "#ffd60a",
+        cuiwarninghover: "#ccab08",
+        cuiwarningdisabled: "#edc531",
+        cuiwarningbg: "#998006",
+        cuibase: "#020108",
+      }
+    }
+  },
+  plugins: [],
+};
+```
