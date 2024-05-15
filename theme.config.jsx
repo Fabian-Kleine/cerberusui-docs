@@ -20,7 +20,7 @@ export default {
     footer: {
         text: (
           <span>
-            © Copyright 2024 {new Date().getFullYear()} ©{' '}
+            © Copyright {new Date().getFullYear()} ©{' '}
             <a className="underline" href="https://cerberusui.fabian-kleine.dev/" target="_blank">
               cerberusui
             </a>
