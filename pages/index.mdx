@@ -6,7 +6,9 @@ import { Modal, Button } from "cerberusui"
 import Link from "next/link"
 
 <div className="flex justify-center items-center w-full h-full">
-    <Modal variant="warning" danger={true} open modalCloseButton={false} className="!px-20 !relative !top-0">
+    <Modal variant="warning" danger={true} open modalCloseButton={false} className="!px-10 sm:!px-20 !mx-0 !relative !top-0">
+        ![cerberusui logo](/cerberusui-logo.png)
+        <span className="text-center font-bold text-lg flex justify-center">{"A UI Library for when you have to create a doomsday app in Javascript"}</span>
         <div className="flex justify-center py-5 gap-2">
              <a href="https://www.npmjs.com/package/cerberusui" target="_blank">
                 <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FFabian-Kleine%2Fcerberusui%2Fmain%2Fpackage.json&query=version&prefix=v&style=flat&logo=npm&label=npm&color=%23CB3837&link=https%3A%2F%2Fwww.npmjs.com%2Fpackage%2Fcerberusui" />

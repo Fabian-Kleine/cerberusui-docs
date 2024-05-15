@@ -1,5 +1,7 @@
+import Image from "next/image"
+
 export default {
-    logo: <span>Placholder Logo</span>,
+    logo: <Image src={'/cerberusui-logo.png'} width={200} height={100} />,
     project: {
         link: 'https://github.com/Fabian-Kleine/cerberusui'
     },
