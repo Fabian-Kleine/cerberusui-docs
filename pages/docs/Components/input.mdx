@@ -1,0 +1,137 @@
+import { Input } from "cerberusui"
+import { useState } from "react"
+
+# Input
+## Props
+|Prop|Type|Default| Required | |
+| :------------ | :---------: | :----------: | :----------: | ----------: |
+| variant       |    "primary" &#124; "secondary" &#124; "tertiary" &#124; <br /> "default" &#124; "warning"    | "default" | yes | style of the button
+| id     |    **string**     |    "" | yes | id of the input
+| type | **string** |    "text" | no | sets the type of the input
+| OTPLength | **Number** | 6 | no | sets the amount of fields for the OTP input
+| labelClassName | **string** | "" | no | set additional classNames for the label
+| className | **string** | "" | no | set additional classNames
+
+Additionally you can add every prop you would use with the default `<input />` element.
+
+
+## Importing Input
+```jsx copy
+import { Input } from "cerberusui"
+```
+
+## Variants
+```jsx copy
+<Input variant="default" />
+<Input variant="primary" />
+<Input variant="secondary" />
+<Input variant="tertiary" />
+<Input variant="warning" />
+```
+<Input variant="default" className="mb-1" />
+<Input variant="primary" className="mb-1" />
+<Input variant="secondary" className="mb-1" />
+<Input variant="tertiary" className="mb-1" />
+<Input variant="warning" className="mb-1" />
+
+## Options
+### Placeholder
+```jsx copy
+<Input variant="default" placeholder="Some placeholder" />
+```
+<Input variant="default" placeholder="Some placeholder" />
+
+### Label
+The `children` of the Input will be set as label.
+```jsx copy
+<Input variant="default">Label</Input>
+```
+<Input variant="default">Label</Input>
+
+## Types
+All Inputs where the `type` is not set to `file`, `checkbox`, `radio`, `button`, `submit`, `reset`, `color`, `range` or `OTP`will be rendered as the default input.
+<Input variant="default" placeholder="Text Input" />
+
+### File
+For the file input to work it is mandatory to specify an id otherwise the component won't work.
+```jsx copy
+<Input variant="default" type="file" id="fileInput" />
+```
+<Input variant="default" type="file" id="fileInput" />
+
+### Checkbox
+```jsx copy
+<Input variant="default" type="checkbox" id="checkboxInput">Checkbox Label</Input>
+```
+<Input variant="default" type="checkbox" id="checkboxInput">Checkbox Label</Input>
+
+### Radio
+```jsx copy
+<Input variant="default" type="radio" id="radioInput">Radio Label</Input>
+```
+<Input variant="default" type="radio" id="radioInput">Radio Label</Input>
+
+### Button Submit Reset
+The button, submit and reset input are rendered as [buttons](button).
+```jsx copy
+<Input variant="default" type="button" value="Button" />
+<Input variant="default" type="submit" />
+<Input variant="default" type="reset" />
+```
+<Input variant="default" type="button" value="Button" />
+<Input variant="default" type="submit" />
+<Input variant="default" type="reset" />
+
+### Color
+```jsx copy
+<Input variant="default" type="color" id="colorInput">Color Label</Input>
+```
+<Input variant="default" type="color" id="colorInput">Color Label</Input>
+
+### Range
+```jsx copy
+<Input variant="default" type="range" id="rangeInput">Range Label</Input>
+```
+<Input variant="default" type="range" id="rangeInput">Range Label</Input>
+
+### OTP
+With the `OTPLength` prop you can control the amount of inputs that are displayed. The default value is `6`.
+```jsx copy
+<Input variant="default" type="OTP" OTPLength={6} id="otpInput">OTP Label</Input>
+```
+<Input variant="default" type="OTP" OTPLength={6} id="otpInput">OTP Label</Input>
+
+When you want to get the value of the input you can add a function to the `onComplete` prop which will run with the input value passed when the input is complete.
+
+```jsx copy
+<Input 
+    variant="default" 
+    type="OTP" 
+    OTPLength={6} 
+    id="otpInput" 
+    onComplete={(value) => setPin(value)}>
+        Enter Pin
+</Input>
+```
+
+export const OTPExample = () => {
+    const [output, setOutput] = useState("Please enter a Pin");
+
+    return (
+        <>
+            <Input
+                variant="default"
+                type="OTP"
+                OTPLength={6}
+                id="otpInput"
+                onComplete={(value) =>
+                    setOutput(value)}
+            >
+                Enter Pin
+            </Input>
+            <p>Pin: {output}</p>
+        </>
+    )
+}
+
+<OTPExample />
