@@ -1,4 +1,5 @@
 import { Button } from "cerberusui"
+import { Radiation, Biohazard } from "lucide-react"
 
 # Button
 ## Props
@@ -7,6 +8,7 @@ import { Button } from "cerberusui"
 | variant       |    "primary" &#124; "secondary" &#124; "tertiary" &#124; <br /> "default" &#124; "warning"    | "default" | yes | style of the button
 | asChild     |    **Boolean**     |    **false** | no | clones the child element
 | loading | **Boolean** |    **false** | no | sets the button to loading
+| square | **Boolean** | **false** | no | makes the button square
 | className | **string** | "" | no | set additional classNames
 
 
@@ -68,3 +70,17 @@ When using the `asChild` prop the child component will be cloned and the props o
 <Button variant="secondary" loading>Secondary</Button>
 <Button variant="tertiary"  loading>Tertiary</Button>
 <Button variant="warning" loading>Warning</Button>
+
+## Square Button
+```jsx copy
+<Button variant="default" square><icon /></Button>
+<Button variant="primary" square><icon /></Button>
+<Button variant="secondary" square><icon /></Button>
+<Button variant="tertiary" square><icon /></Button>
+<Button variant="warning" square><icon /></Button>
+```
+<Button variant="default" square><Radiation /></Button>
+<Button variant="primary" square><Radiation /></Button>
+<Button variant="secondary" square><Radiation /></Button>
+<Button variant="tertiary" square><Biohazard /></Button>
+<Button variant="warning" square><Biohazard /></Button>
