@@ -29,7 +29,10 @@ module.exports = {
         cuiwarningbg: "#998006",
         cuibase: "#020108",
       }
-    }
+    },
   },
+  safelist: [
+    'underline'  
+  ],
   plugins: [],
 };

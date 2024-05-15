@@ -12,5 +12,23 @@ export default {
           <meta property="og:title" content="Cerberusui" />
           <meta property="og:description" content="A UI Library for when you have to create a doomsday app in Javascript" />
         </>
-    )
+    ),
+    chat: {
+        link: "https://www.npmjs.com/package/cerberusui",
+        icon: <Image src={'/npm.png'} width={30} height={100} />
+    },
+    footer: {
+        text: (
+          <span>
+            © Copyright 2024 {new Date().getFullYear()} ©{' '}
+            <a className="underline" href="https://cerberusui.fabian-kleine.dev/" target="_blank">
+              cerberusui
+            </a>
+            {" "}and{" "}
+            <a className="underline" href="https://fabian-kleine.dev/" target="_blank">
+              Fabian Kleine
+            </a>
+            .
+          </span>
+    )}
 }
