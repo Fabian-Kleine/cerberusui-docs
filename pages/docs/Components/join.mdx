@@ -1,0 +1,38 @@
+import { Join, Button, Input } from "cerberusui"
+
+# Join
+## Props
+|Prop|Type|Default| Required | |
+| :------------ | :---------: | :----------: | :----------: | ----------: |
+| className | **string** | "" | no | set additional classNames
+
+## Importing Join
+```jsx copy
+import { Join } from "cerberusui"
+```
+
+## Join Elements
+### Multiple Buttons
+```jsx copy
+<Join>
+   <Button variant="primary">Button</Button>
+   <Button variant="secondary">Button</Button>
+   <Button variant="tertiary">Button</Button>
+</Join>
+```
+<Join>
+   <Button variant="primary">Button</Button>
+   <Button variant="secondary">Button</Button>
+   <Button variant="tertiary">Button</Button>
+</Join>
+### Button and Input
+```jsx copy
+<Join>
+   <Input variant="primary" id="input" />
+   <Button variant="primary">Button</Button>
+</Join>
+```
+<Join>
+   <Input variant="primary" id="input" />
+   <Button variant="primary">Button</Button>
+</Join>
