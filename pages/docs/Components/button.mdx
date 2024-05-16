@@ -78,6 +78,36 @@ When using the `asChild` prop the child component will be cloned and the props o
 <Button variant="tertiary"  loading>Tertiary</Button>
 <Button variant="warning" loading>Warning</Button>
 
+## Button With Icon
+### Icon at start
+```jsx copy
+<Button variant="default"><icon />Default</Button>
+<Button variant="primary"><icon />Primary</Button>
+<Button variant="secondary"><icon />Secondary</Button>
+<Button variant="tertiary"><icon />Tertiary</Button>
+<Button variant="warning"><icon />Warning</Button>
+```
+<Button variant="default"><Radiation />Default</Button>
+<Button variant="primary"><Radiation />Primary</Button>
+<Button variant="secondary"><Radiation />Secondary</Button>
+<Button variant="tertiary"><Biohazard />Tertiary</Button>
+<Button variant="warning"><Biohazard />Warning</Button>
+
+### Icon at end
+```jsx copy
+<Button variant="default">Default<icon /></Button>
+<Button variant="primary">Primary<icon /></Button>
+<Button variant="secondary">Secondary<icon /></Button>
+<Button variant="tertiary">Tertiary<icon /></Button>
+<Button variant="warning">Warning<icon /></Button>
+```
+<Button variant="default">Default<Radiation /></Button>
+<Button variant="primary">Primary<Radiation /></Button>
+<Button variant="secondary">Secondary<Radiation /></Button>
+<Button variant="tertiary">Tertiary<Biohazard /></Button>
+<Button variant="warning">Warning<Biohazard /></Button>
+
+
 ## Square Button
 ```jsx copy
 <Button variant="default" square><icon /></Button>
