@@ -1,4 +1,5 @@
 import { Join, Button, Input } from "cerberusui"
+import { Copy } from "lucide-react"
 
 # Join
 ## Props
@@ -35,4 +36,16 @@ import { Join } from "cerberusui"
 <Join>
    <Input variant="primary" id="input" />
    <Button variant="primary">Button</Button>
+</Join>
+
+### Icon Button and Input
+```jsx copy
+<Join>
+   <Input variant="primary" id="input" />
+   <Button variant="primary" square><icon /></Button>
+</Join>
+```
+<Join>
+   <Input variant="primary" id="input" />
+   <Button variant="primary" square><Copy /></Button>
 </Join>
