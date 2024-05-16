@@ -2,8 +2,9 @@
 title: Cerberusui – The Doomsday ui-library
 ---
 
-import { Modal, Button } from "cerberusui"
+import { Modal, Button, Join, Input } from "cerberusui"
 import Link from "next/link"
+import { Copy } from "lucide-react"
 
 <div className="flex justify-center items-center w-full h-full">
     <Modal variant="warning" danger={true} open modalCloseButton={false} className="!px-10 sm:!px-20 !mx-0 !relative !top-0">
@@ -18,9 +19,10 @@ import Link from "next/link"
              </a>
         </div>
         <div className="flex flex-col items-center gap-5">
-            ```text copy
-            npm i cerberusui
-            ```
+            <Join>
+                <Input className="!text-cuiprimary cursor-text" variant="primary" disabled value="npm i cerberusui" />
+                <Button variant="primary" square title="Copy to clipboard" onClick={() => navigator.clipboard.writeText("npm i cerberusui")}><Copy /></Button>
+            </Join>
             <Button variant="secondary" asChild><Link href={'/docs/introduction'}>Docs</Link></Button>
         </div>
     </Modal>
