@@ -121,3 +121,19 @@ When using the `asChild` prop the child component will be cloned and the props o
 <Button variant="secondary" square><Radiation /></Button>
 <Button variant="tertiary" square><Biohazard /></Button>
 <Button variant="warning" square><Biohazard /></Button>
+
+## Combination
+```jsx copy
+<Button variant="primary" asChild loading>
+    <a href="#"><icon />Primary</a>
+</Button>
+<Button variant="primary" asChild loading square>
+    <a href="#"><icon /></a>
+</Button>
+```
+<Button variant="primary" asChild loading>
+    <a href="#"><Radiation />Primary</a>
+</Button>
+<Button variant="primary" asChild loading square>
+    <a href="#"><Biohazard /></a>
+</Button>
