@@ -1,0 +1,158 @@
+import { Dropdown, DropdownItem } from "cerberusui"
+import { Tabs } from 'nextra/components'
+
+# Dropdown
+
+## Props
+### Dropdown Props
+|Prop|Type|Default| Required | |
+| :------------ | :---------: | :----------: | :----------: | ----------: |
+| variant       |    "primary" &#124; "secondary" &#124; "tertiary" &#124; <br /> "default" &#124; "warning"    | "default" | yes | style of the dropdown
+| label     |    **string**     |    "" | yes | clones the child element
+| closeOnOutsideClick     |    **Boolean**     |    **true** | no | close the dropdown when clicking outside
+| defaultOpen     |    **Boolean**     |    **false** | no | dropdown is opened by default
+| className | **string** | "" | no | set additional classNames
+
+### DropdownItem Props
+|Prop|Type|Default| Required | |
+| :------------ | :---------: | :----------: | :----------: | ----------: |
+| asChild     |    **Boolean**     |    **false** | no | clones the child element
+| className | **string** | "" | no | set additional classNames
+
+## Importing Dropdown
+```jsx copy
+import { Dropdown, DropdownItem } from "cerberusui"
+```
+
+## Usage
+To use the **Dropdown** specify a variant and a label which will be displayed the button.
+
+The **DropdownItem** component is used for the content of the dropdown.
+```jsx copy
+<Dropdown variant="primary" label="Dropdown">
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+```
+<Dropdown variant="primary" label="Dropdown">
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+
+## Variants
+<Tabs items={['Default', 'Primary', 'Secondary', 'Tertiary', 'Warning']}>
+    <Tabs.Tab>
+    ```jsx copy
+    <Dropdown variant="default" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    ```
+    <Dropdown variant="default" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy
+    <Dropdown variant="primary" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    ```
+    <Dropdown variant="primary" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy
+    <Dropdown variant="secondary" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    ```
+    <Dropdown variant="secondary" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy
+    <Dropdown variant="tertiary" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    ```
+    <Dropdown variant="tertiary" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    </Tabs.Tab>
+        <Tabs.Tab>
+    ```jsx copy
+    <Dropdown variant="warning" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    ```
+    <Dropdown variant="warning" label="Dropdown">
+        <DropdownItem>Item 1</DropdownItem>
+        <DropdownItem>Item 2</DropdownItem>
+        <DropdownItem>Item 3</DropdownItem>
+    </Dropdown>
+    </Tabs.Tab>
+</Tabs>
+
+## Options
+### closeOnOutsideClick
+
+```jsx copy
+<Dropdown variant="primary" label="Dropdown" closeOnOutsideClick={false}>
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+```
+
+<Dropdown variant="primary" label="Dropdown" closeOnOutsideClick={false}>
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+
+### defaultOpen
+When using `defaultOpen` it is recommended to also disable `closeOnOutsideClick` otherwise the dropdown will be closed on any click.
+
+```jsx copy
+<Dropdown variant="primary" label="Dropdown" closeOnOutsideClick={false} defaultOpen={true}>
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+```
+
+### DropdownItem asChild
+```jsx copy
+<Dropdown variant="primary" label="Dropdown">
+    <DropdownItem asChild><a href="#">Item 1</a></DropdownItem>
+    <DropdownItem asChild><a href="#">Item 2</a></DropdownItem>
+    <DropdownItem asChild><a href="#">Item 3</a></DropdownItem>
+</Dropdown>
+```
+<Dropdown variant="primary" label="Dropdown">
+    <DropdownItem asChild><a href="#">Item 1</a></DropdownItem>
+    <DropdownItem asChild><a href="#">Item 2</a></DropdownItem>
+    <DropdownItem asChild><a href="#">Item 3</a></DropdownItem>
+</Dropdown>
