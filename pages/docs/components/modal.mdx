@@ -64,7 +64,7 @@ export const ModalExample = () => {
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     ```
-    <Modal setOpen={() => { }} modalTitle="Default Modal" variant="default" open className='!relative !top-0'> 
+    <Modal setOpen={() => { }} modalTitle="Default Modal" variant="default" open className='!relative !top-0 !z-10'> 
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     </Tabs.Tab>
@@ -74,7 +74,7 @@ export const ModalExample = () => {
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     ```
-    <Modal setOpen={() => { }} modalTitle="Primary Modal" variant="primary" open className='!relative !top-0'> 
+    <Modal setOpen={() => { }} modalTitle="Primary Modal" variant="primary" open className='!relative !top-0 !z-10'> 
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     </Tabs.Tab>
@@ -84,7 +84,7 @@ export const ModalExample = () => {
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     ```
-    <Modal setOpen={() => { }} modalTitle="Secondary Modal" variant="secondary" open className='!relative !top-0'> 
+    <Modal setOpen={() => { }} modalTitle="Secondary Modal" variant="secondary" open className='!relative !top-0 !z-10'> 
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     </Tabs.Tab>
@@ -94,7 +94,7 @@ export const ModalExample = () => {
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     ```
-    <Modal setOpen={() => { }} modalTitle="Tertiary Modal" variant="tertiary" open className='!relative !top-0'> 
+    <Modal setOpen={() => { }} modalTitle="Tertiary Modal" variant="tertiary" open className='!relative !top-0 !z-10'> 
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     </Tabs.Tab>
@@ -104,7 +104,7 @@ export const ModalExample = () => {
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     ```
-    <Modal setOpen={() => { }} modalTitle="Warning Modal" variant="warning" open className='!relative !top-0'> 
+    <Modal setOpen={() => { }} modalTitle="Warning Modal" variant="warning" open className='!relative !top-0 !z-10'> 
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
     </Tabs.Tab>
@@ -125,7 +125,7 @@ export const ModalExample = () => {
             modalTitle="Default Modal with Title"
             variant="default"
             open
-            className='!relative !top-0'> 
+            className='!relative !top-0 !z-10'> 
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
 </Modal>
 
@@ -152,7 +152,7 @@ When the viewport gets to small the images display is set to `display: none;`.
             }
             variant="default"
             open
-            className='!relative !top-0'> 
+            className='!relative !top-0 !z-10'> 
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
 </Modal>
 
@@ -191,7 +191,7 @@ For each **action** you can define an `action` which has the type `Function`, an
                 actionTitle: "Close",
                 actionVariant: "secondary"
             }]}
-            className='!relative !top-0'> 
+            className='!relative !top-0 !z-10'> 
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
 </Modal>
 
@@ -213,7 +213,7 @@ Make sure to implement an alternative closing button like shown in [#Actions](#a
             modalCloseButton={false}
             open
             variant="default"
-            className='!relative !top-0'>
+            className='!relative !top-0 !z-10'>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
 </Modal>
 
@@ -233,7 +233,7 @@ Make sure to implement an alternative closing button like shown in [#Actions](#a
             danger={true}
             open
             variant="warning"
-            className='!relative !top-0'>
+            className='!relative !top-0 !z-10'>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
 </Modal>
 
@@ -261,8 +261,7 @@ export const CombinedModal = () => {
                     actionVariant: "secondary"
                 }]}
                 setOpen={setOpen}
-                variant="warning"
-                className='z-50'>
+                variant="warning">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
             </Modal>
         </>
@@ -292,7 +291,7 @@ The modal uses the package [`react-draggable`](https://www.npmjs.com/package/rea
                 modalDraggable={true}
                 open
                 variant="default"
-                className='!relative !top-10'>
+                className='!relative !top-10 !z-10'>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
     </Modal>
 </div>
