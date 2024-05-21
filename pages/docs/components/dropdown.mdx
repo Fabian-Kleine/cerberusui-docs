@@ -25,9 +25,9 @@ import { Dropdown, DropdownItem } from "cerberusui"
 ```
 
 ## Usage
-To use the **Dropdown** specify a variant and a label which will be displayed the button.
+To use the **Dropdown** specify a variant and a label which will be displayed on the button.
 
-The **DropdownItem** component is used for the content of the dropdown.
+The **DropdownItem** component is used for the content of the dropdown like shown below.
 ```jsx copy
 <Dropdown variant="primary" label="Dropdown">
     <DropdownItem>Item 1</DropdownItem>
@@ -117,7 +117,7 @@ The **DropdownItem** component is used for the content of the dropdown.
 
 ## Options
 ### closeOnOutsideClick
-
+When set to `false` the Dropdown won't close when clicked outside. It the only closes when clicking on the button.
 ```jsx copy
 <Dropdown variant="primary" label="Dropdown" closeOnOutsideClick={false}>
     <DropdownItem>Item 1</DropdownItem>
@@ -144,6 +144,7 @@ When using `defaultOpen` it is recommended to also disable `closeOnOutsideClick`
 ```
 
 ### DropdownItem asChild
+When using the asChild prop the child component will be cloned and the props of the DropdownItem will be passed to it.
 ```jsx copy
 <Dropdown variant="primary" label="Dropdown">
     <DropdownItem asChild><a href="#">Item 1</a></DropdownItem>
