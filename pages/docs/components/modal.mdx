@@ -15,6 +15,7 @@ import { Radiation } from "lucide-react"
 | modalImage | **ReactNode** | {"<></>"} | no | image inside the modal
 | modalDraggable | **Boolean** | **false** | no | draggable modal
 | modalCloseButton | **Boolean** | **true** | no | shows/hides the close button
+| outsideClickClose | **Boolean** | **false** | no | closes the modal when clicking outside
 | danger | **Boolean** | **false** | no | displays danger animation
 | className | **string** | "" | no | set additional classNames
 
@@ -198,7 +199,7 @@ For each **action** you can define an `action` which has the type `Function`, an
 ### Without Close Button
 When this option is set to `false` the default close button doesn't show up.
 
-Make sure to implement an alternative closing button like shown in [#Actions](#actions).
+Make sure to implement an alternative closing button like shown in [#Actions](#actions) or enable [`outsideClickClose`](#close-on-outside-click).
 ```jsx copy
 <Modal 
     modalTitle="Default Modal without Close Button"
@@ -216,6 +217,41 @@ Make sure to implement an alternative closing button like shown in [#Actions](#a
             className='!relative !top-0 !z-10'>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
 </Modal>
+
+### Close on Outside Click
+```jsx copy
+<Modal 
+    modalTitle="This Modal closes when clicked outside"
+    outsideClickClose={true}
+    modalCloseButton={false} // this is optional
+    variant="default">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+
+export const CloseModal = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <>
+            <Button onClick={() => setOpen(true)} variant="primary">Open Modal</Button>
+            <Modal
+                open={open}
+                setOpen={setOpen}
+                modalTitle="This Modal closes when clicked outside"
+                outsideClickClose={true}
+                modalCloseButton={false}
+                variant="primary">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+            </Modal>
+        </>
+    )
+}
+
+<div className='flex justify-center w-full'>
+ <CloseModal />
+</div>
+
 
 ### Danger
 ```jsx copy
