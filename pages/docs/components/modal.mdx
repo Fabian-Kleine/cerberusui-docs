@@ -274,6 +274,29 @@ export const CloseModal = () => {
 </Modal>
 
 ### Combined
+```jsx copy
+<Modal 
+    modalTitle="Combined Modal"
+    modalActions={[{
+        action: () => alert("modal alert"),
+        actionTitle: "Alert",
+        actionVariant: "warning"
+    }, {
+        action: () => setOpen(false),
+        actionTitle: "Close",
+        actionVariant: "secondary"
+    }]}
+    modalImage={
+        <img src="https://example.com/your-image.png" />
+    } 
+    danger={true}
+    outsideClickClose={true}
+    modalCloseButton={false}
+    variant="warning">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
+</Modal>
+```
+
 export const CombinedModal = () => {
     const [open, setOpen] = useState(false);
 
@@ -297,6 +320,8 @@ export const CombinedModal = () => {
                     actionVariant: "secondary"
                 }]}
                 setOpen={setOpen}
+                outsideClickClose={true}
+                modalCloseButton={false}
                 variant="warning">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, reprehenderit.</p>
             </Modal>
