@@ -1,5 +1,6 @@
 import { Dropdown, DropdownItem } from "cerberusui"
 import { Tabs } from 'nextra/components'
+import { ChevronDown } from "lucide-react"
 
 # Dropdown
 
@@ -8,7 +9,7 @@ import { Tabs } from 'nextra/components'
 |Prop|Type|Default| Required | |
 | :------------ | :---------: | :----------: | :----------: | ----------: |
 | variant       |    "primary" &#124; "secondary" &#124; "tertiary" &#124; <br /> "default" &#124; "warning"    | "default" | yes | style of the dropdown
-| label     |    **string**     |    "" | yes | clones the child element
+| label     |    **string** &#124; **ReactNode**   |    "" | yes | clones the child element
 | closeOnOutsideClick     |    **Boolean**     |    **true** | no | close the dropdown when clicking outside
 | defaultOpen     |    **Boolean**     |    **false** | no | dropdown is opened by default
 | className | **string** | "" | no | set additional classNames
@@ -116,6 +117,36 @@ The **DropdownItem** component is used for the content of the dropdown like show
 </Tabs>
 
 ## Options
+### Label
+The `label` can be defined as a **string** or **ReactNode**.
+#### Type String
+```jsx copy
+<Dropdown variant="primary" label="Dropdown">
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+```
+<Dropdown variant="primary" label="Dropdown">
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+
+#### Type ReactNode
+```jsx copy
+<Dropdown variant="primary" label={<>Dropdown<icon /></>}>
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+```
+<Dropdown variant="primary" label={<>Dropdown<ChevronDown /></>}>
+    <DropdownItem>Item 1</DropdownItem>
+    <DropdownItem>Item 2</DropdownItem>
+    <DropdownItem>Item 3</DropdownItem>
+</Dropdown>
+
 ### closeOnOutsideClick
 When set to `false` the Dropdown won't close when clicked outside. It then only closes when clicking on the button.
 ```jsx copy
